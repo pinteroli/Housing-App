@@ -1,0 +1,35 @@
+<div class="card shadow-lg">
+	<div class="card-img-wrapper">
+		<img *ngIf="property.Image" class="card-img-top" src="assets/images/{{ property.Image }}.jpg" alt="flat">
+		<img *ngIf="!property.Image" class="card-img-top" src="assets/images/default.png" alt="default">
+
+		<div *ngIf="!hideIcons" class="card-body text-center member-icons animate">
+			<button class="card-link btn btn-primary" routerLink="/property-detail/{{ property.Id }}"><i class="far fa-edit"></i></button>
+			<button class="card-link btn btn-primary"><i class="far fa-address-book"></i></button>
+		</div>
+	</div>
+
+	<div class="card-body p-4">
+		<h5 class="card-title">{{ property.Name }}</h5>
+		<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	</div>
+
+	<ul class="list-group list-group-flush pb-1">
+		<li class="list-group-item px-4">
+			<b>City:</b> {{property.City}} | <span> {{property.BuiltArea}} Sq Ft </span>
+		</li>
+
+		<li class="list-group-item px-4">
+			<b>Property Type:</b> {{property.BHK}} BHK {{property.PType}}
+		</li>
+
+		<li class="list-group-item px-4">
+			<b>Furnishing Type:</b> {{property.FType}} <span *ngIf="property.FType !== 'Unfurnished'">Furnished</span>
+		</li>
+
+		<li class="list-group-item px-4">
+			<b>Price:</b> <span style="color: red"> {{property.Price}} USD.</span>
+		</li>
+	</ul>
+</div>
+

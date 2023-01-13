@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "housing-pro"
+  },
+  "targets": {
+    "housing-pro": {
+      "hosting": {
+        "frontend": [
+          "housing-pro"
+        ]
+      }
+    }
+  }
+}
